@@ -1,0 +1,253 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* navbar */
+#nav{
+    background: lightcyan;
+}
+
+#logo{
+    font-size: 40px;
+    font-weight: 800;
+    margin-bottom: 4px;
+    color:black;
+    text-shadow: 0px 1px 1px black;
+}
+
+#logo span{
+ color: #EA40A4;
+}
+
+.navbar-nav{
+    margin-left: 20px;
+}
+
+.nav-link{
+    font-size:20px;
+    font-weight: 600;
+    color:#EA40A4;
+    letter-spacing: 1px;
+    border-radius: 0.3vw;
+    transition: 0.5s ease;
+    cursor: pointer;
+    outline: none;
+    border:none;
+    padding: 1rem;
+}
+
+.nav-link:hover{
+    background: #fff;
+    color: black;
+}
+
+.btn-primary{
+    background: #EA40A4;
+    color: white;
+    border: none;
+}
+
+/* section */
+.home{
+    width: 100%;
+    height:100vh;
+    background-image: linear-gradient(rgba(0,0,0,0,3),rgba(0,0,0,0,2));
+    background: url(hotel.jpg);
+    background-size: cover;
+}
+
+.content{
+    text-align: center;
+    padding: 200px;
+}
+
+.content h5{
+    color:white;
+    font-size: 40px;
+    font-weight: 600;
+    text-shadow: 0px 1px 1px black;
+}
+
+.content h1{
+ color:white;
+ font-size:70px;
+ font-weight: 600;
+ text-shadow: 0px 1px 1px black;
+ margin-top: 5px;
+
+}
+
+.content p{
+    color:white;
+    font-size: 15px;
+    font-weight: 600;
+    text-shadow: 0px 1px 1px black;
+    margin-bottom: 30px;
+    margin-top: 5px;
+}
+
+.change::after{
+    content: '  ';
+    color: yellow;
+    text-shadow: 0px 1px 1px black;
+    animation: changetxt 10s infinite linear;
+}
+
+@keyframes changetxt{
+    0%{content: "Vineyard";}
+    60%{content: "Rosewood";}
+    100%{content: "Marriott";}
+}
+
+.content a{
+    padding: 10px;
+    background: white;
+    letter-spacing: 2px;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: 0.5s;
+    text-decoration: none;
+}
+
+.content a:hover{
+    background: #EA40A4;
+    color:white;
+}
+
+@media(max-width:850px){
+    .home{
+        background-position: 50%;
+    }
+}
+
+@media(max-width:450px){
+    .content h5{
+        font-size: 25px;
+    }
+
+    .content h1{
+        font-size:30px;
+    }
+
+    .content p{
+        font-size:15px;
+    }
+}
+
+/* Section Book*/
+
+.book{
+    background:#fff;
+    padding: 50px;
+}
+
+.main h1{
+    text-align: center;
+    text-shadow: 0px 1px 1px black;
+    box-shadow: 0px 1px 1px black;
+    font-weight: 700;
+}
+
+.main h1 span{
+    color: #EA40A4;
+}
+
+.submit{
+
+    padding: 10px;
+    background: white;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-radius: 2px;
+    color: blue;
+    border: groove;
+}
+
+.book .card{
+    border-radius: 20px;
+    box-shadow: 0px 1px 1px -4px black;
+}
+
+.book .row{
+    margin-top: 30px;
+}
+
+.book form{
+    padding: 10px;
+    color: black;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px 4px white;
+}
+
+form textarea{
+    border: none;
+    border-radius: 15px;
+    resize: none;
+    box-shadow: 0px 2px 3px -2px white;
+}
+
+@media(max-width:760px){
+    .book{
+        padding: 0;
+    }
+
+    .main h1{
+        margin-top: 23px;
+    }
+}
+
+/* Section Services*/
+
+.services{
+    background: url(ServiceImg.jpeg);
+}
+
+.services .card{
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0px 4px 12px black ;
+    margin-bottom: 1rem;
+}
+
+.services .card img{
+    border-radius: 10px;
+
+}
+
+.services .card .body{
+    text-align: center;
+}
+
+.services .card .body h3{
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.services .card .body p{
+    font-size: 20px;
+}
+
+.checked{
+    color:yellow;
+}
+
+.services .card .body h6{
+    font-size:15px;
+}
+
+.ServiceLink{
+    padding: 50px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+}
