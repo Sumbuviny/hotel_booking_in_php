@@ -14,3 +14,15 @@ creating section services
 creating section book
 using CSS properties
 
+PHP
+
+define variables and set to empty values.
+
+check if the name contains only letters and spaces.
+
+check if the email address is well formed.
+
+creating function.
+
+adding form
+

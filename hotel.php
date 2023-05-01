@@ -74,7 +74,68 @@
 
                        <div class="col-md-6 py-3 py-md-0">
 
-         
+                          <?php
+                              // define variables
+                                $nameErr = $emailErr = $numberOfDayErr = "";
+                                $name = $email =  $numberOfDay = "";
+
+                              if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                                    if (empty($_POST["name"])) {
+                                        $nameErr = " Name is required";
+                                    } else {
+                                       $name = detail_input($_POST["name"]);
+                                       // name must contain letters and whitespace
+                                    if (!preg_match("/^[a-zA-Z-' ]*$/",$name)) {
+                                          $nameErr = "Only letters and white space allowed";
+                                    }
+                                 }
+  
+                                 if (empty($_POST["email"])) {
+                                     $emailErr = "Email is required";
+                                    } else {
+                                      $email = detail_input($_POST["email"]);
+                                      // e-mail address must be well-formed
+                                    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                                      $emailErr = "Invalid email format";
+                                    }
+                                 }
+
+                                  if (empty($_POST["number"])) {
+                                        $numberOfDayErr = " Number of Days is required";
+                                        } else {
+                                           $numberOfDay = detail_input($_POST["number"]);
+                                              // number of days must contain letters and whitespace
+                                         if (!preg_match("/^[a-zA-Z-' ]*$/",$numberOfDay)) {
+                                           $numberOfDayErr = "Only letters and white space allowed";
+                                         }
+                                   }
+
+                               }
+
+                               function detail_input($data) {
+                                    $data = trim($data);
+                                    $data = stripslashes($data);
+                                    $data = htmlspecialchars($data);
+                                    return $data;
+                                 }
+                            ?>
+
+                            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
+                                <input type="text" class="form-control" name="name" placeholder="enter your name" value="<?php echo $name;?>">
+                                <span class="error">* <?php echo $nameErr;?></span>
+                                <br><br>
+                                <input type="text" class="form-control" name="email" placeholder="Your email address" value="<?php echo $email;?>">
+                                <span class="error">* <?php echo $emailErr;?></span>
+                                 <br><br>
+                                <input type="text" class="form-control" name="number" placeholder="Number of days. example: one" value="<?php echo $numberOfDay;?>">
+                                <span class="error"><?php echo $numberOfDayErr;?></span>
+                                 <br><br>
+                                 Arrivals: <input type="date" class="form-control" required>
+                                <br>
+                                 Leaving: <input type="date" class="form-control" required>
+                                <br>
+                                <input type="submit" name="submit" class="submit"  value="Book now">  
+                              </form>
 
                         </div>  
                   </div>
